@@ -1,4 +1,4 @@
-# Unit 7 Homework Assignment: Looking for Suspicious Transactions
+# Python - Utilizing SQL
 
 ![Credit card fraudster](Images/credit_card_fraudster.jpg)
 
@@ -9,8 +9,6 @@
 Fraud is prevalent these days, whether you are a small taco shop or a large international business. While there are emerging technologies that employ machine learning and artificial intelligence to detect fraud, many instances of fraud detection still require strong data analytics to find abnormal charges.
 
 In this homework assignment, you will apply your new SQL skills to analyze historical credit card transactions and consumption patterns in order to identify possible fraudulent transactions.
-
-You are asked to accomplish three main tasks:
 
 1. [Data Modeling](#Data-Modeling):
 Define a database model to store the credit card transactions data and create a new PostgreSQL database using your model.
@@ -29,7 +27,6 @@ Define a database model to store the credit card transactions data and create a 
 * [merchant_category.csv](Data/merchant_category.csv)
 * [transaction.csv](Data/transaction.csv)
 
-## Instructions
 
 ### Data Modeling
 
@@ -38,11 +35,6 @@ Create an entity relationship diagram (ERD) by inspecting the provided CSV files
 Part of the challenge here is to figure out how many tables you should create, as well as what kind of relationships you need to define among the tables.
 
 Feel free to discuss your database model design ideas with your classmates. You can use a tool like [Quick Database Diagrams](https://www.quickdatabasediagrams.com) to create your model.
-
-**Hints:** 
-
-* For the `credit_card` and `transaction` tables, the `card` column should be a VARCHAR(20) datatype rather than an INT.
-* For the `transaction` table, the `date` column should be a TIMESTAMP datatype rather than DATE.
 
 ### Data Engineering
 
@@ -96,45 +88,3 @@ Your CFO has also requested detailed trends data on specific card holders. Use t
   * Are there any outliers for cardholder ID 25? How many outliers are there per month?
 
   * Do you notice any anomalies? Describe your observations and conclusions.
-
-## Challenge
-
-Another approach to identifying fraudulent transactions is to look for outliers in the data. Standard deviation or quartiles are often used to detect outliers.
-
-Use the [challenge starter notebook](Starter_Files/challenge.ipynb) to code two Python functions:
-
-* One that uses standard deviation to identify anomalies for any cardholder.
-
-* Another that uses interquartile range to identify anomalies for any cardholder.
-
-For help with outliers detection, read the following articles:
-
-* [How to Calculate Outliers](https://www.wikihow.com/Calculate-Outliers)
-
-* [Removing Outliers Using Standard Deviation in Python](https://www.kdnuggets.com/2017/02/removing-outliers-standard-deviation-python.html)
-
-* [How to Use Statistics to Identify Outliers in Data](https://machinelearningmastery.com/how-to-use-statistics-to-identify-outliers-in-data/)
-
-### Submission
-
-Post a link to your GitHub repository in BootCamp Spot. The following should be included your repo:
-
-* An image file of your ERD.
-
-* The `.sql` file of your table schemata.
-
-* The `.sql` file of your queries.
-
-* The Jupyter Notebook containing your visual data analysis.
-
-* A ReadME file containing your markdown report.
-
-* **Optional:** The Jupyter Notebook containing the optional challenge assignment.
-
-## Hint
-
-For comparing time and dates, take a look at the [date/time functions and operators](https://www.postgresql.org/docs/8.0/functions-datetime.html) in the PostgreSQL documentation.
-
----
-
-© 2020 Trilogy Education Services
